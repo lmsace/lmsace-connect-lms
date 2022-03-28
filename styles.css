@@ -1,0 +1,128 @@
+.lac-generate-token .circle-success i {
+    color: var(--success);
+}
+.lac-generate-token .circle-error i {
+    color: var(--danger);
+}
+.lac-generate-token .nav-tabs {
+    text-align: center;
+    border: 0;
+    background: none;
+    display: block;
+}
+.lac-generate-token .nav-tabs .nav-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+.lac-generate-token .nav-tabs .nav-item a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #495057;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    position: relative;
+}
+.lac-generate-token .nav-tabs .nav-link.active:not(:disabled):not(.disabled).active {
+    color: var(--primary);
+    background: none;
+}
+.lac-generate-token .nav-tabs .nav-item a:after {
+    content: '';
+    width: 100%;
+    height: 5px;
+    background: #eee;
+    border-radius: 11px;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 0;
+}
+.lac-generate-token .nav-tabs .nav-item a.active {
+    color: var(--primary);
+    border: 0;
+}
+.lac-generate-token .nav-tabs .nav-item a.active:after {
+    background: var(--primary);
+}
+.lac-generate-token .tab-content {
+    max-width: 900px;
+    margin: 20px auto 0;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px rgb(0 0 0 / 30%);
+}
+.lac-generate-token .tab-content .tab-pane {
+    padding: 20px;
+}
+.lac-generate-token .tab-content .tab-pane .form .webservice-field,
+.lac-generate-token .tab-content .tab-pane .form .protocal-field {
+    margin-bottom: 15px;
+}
+.lac-generate-token .tab-content .tab-pane .form .webservice-field label,
+.lac-generate-token .tab-content .tab-pane .form .protocal-field label {
+    min-width: 180px;
+    margin-right: 10px;
+    max-width: 180px;
+}
+.lac-generate-token .tab-content .tab-pane .form .webservice-field .badge,
+.lac-generate-token .tab-content .tab-pane .form .protocal-field .badge {
+    margin-right: 30px;
+}
+.lac-generate-token .tab-content .tab-pane .form .connection-data .form-group label {
+    min-width: 180px;
+    margin-right: 10px;
+    background: none;
+}
+.lac-generate-token .tab-content .tab-pane .form .connection-data .form-group.lac-error label {
+    font-weight: bold;
+    color: #f00;
+    vertical-align: top;
+}
+.lac-generate-token .tab-content .tab-pane .form .connection-data .form-group .form-item {
+    max-width: 500px;
+    width: 100%;
+    display: inline-block;
+}
+.lac-generate-token .tab-content .tab-pane .form .connection-data .form-group .form-item .form-control {
+    width: 85%;
+    display: inline-block;
+}
+.lac-generate-token .tab-content .tab-pane .form .connection-data .form-group .form-item .badge {
+    font-size: 14px;
+    color: var(--primary);
+    background: none;
+    cursor: pointer;
+}
+
+.lac-generate-token ul.missing-capabilities {
+    list-style: circle;
+}
+
+.lac-generate-token .tab-content .tab-pane .form .connection-data .form-group .form-item .badge {
+    width: 35px;
+    height: 37px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #fff;
+    border: 1px solid var(--primary);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: var(--primary);
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -5px;
+    cursor: pointer;
+}
+
+.lac-generate-token .circle-success i.fa:after {
+    content: "\f00c";
+    width: 10px;
+    height: 10px;
+}
+
+.lac-generate-token .circle-error i.fa:after {
+    content: "\f00d";
+    width: 10px;
+    height: 10px;
+}

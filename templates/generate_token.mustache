@@ -1,0 +1,133 @@
+<div class="lac-generate-token">
+    
+    <ul class="nav nav-tabs" >
+        <li class="nav-item">
+            <a class="nav-link active {{tabstatus.general}}" data-toggle="tab" href="#general">
+                {{#str}} general, core {{/str}}
+                <i class="fa"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{tabstatus.token}}"  data-toggle="tab" href="#connection">{{#str}} generatetoken, local_lmsace_connect {{/str}}
+                <i class="fa"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="general" role="tabpanel" aria-labelledby="general-tab">
+            <div class="heading text-center pt-1">
+                <p> {{#str}} settingstoconnect, local_lmsace_connect {{/str}} </p>
+            </div>
+            <div class="form generalform mform mt-1 pt-5" >
+                <div class="webservice-field">
+                    <label> {{#str}} enablewebservices, core_admin {{/str}}
+                        {{{webservicehelp}}}
+                     </label>
+                    {{#webserviceenabled}}
+                        <span class="badge badge-success"> {{#str}} enabled, local_lmsace_connect {{/str}} </span>
+                        {{{webservicebutton}}}
+                        <i class="fa fa-check text-success"></i>
+                    {{/webserviceenabled}}
+                    {{^webserviceenabled}}
+                        <span class="badge badge-danger"> {{#str}} disabled, local_lmsace_connect {{/str}} </span>
+                        {{{webservicebutton}}}
+                        <i class="fa fa-close text-danger"></i>
+                    {{/webserviceenabled}}
+                </div>
+
+                <div class="protocal-field">
+                    <label> {{#str}} enablewebprotocal, local_lmsace_connect {{/str}} </label>
+                    {{#protocolenabled}}
+                        <span class="badge badge-success"> {{#str}} enabled, local_lmsace_connect {{/str}} </span>
+                        {{{protocolbutton}}}
+                        <i class="fa fa-check text-success"></i>
+                    {{/protocolenabled}}
+                    {{^protocolenabled}}
+                        <span class="badge badge-danger"> {{#str}} disabled, local_lmsace_connect {{/str}} </span>
+                        {{{protocolbutton}}}
+                        <i class="fa fa-close text-danger"></i>
+                    {{/protocolenabled}}
+                </div>
+
+                <div class="connection-data">
+                    <div class="form-group">
+                        <label> {{#str}} siteurl, local_lmsace_connect {{/str}} </label>
+                        <div class="form-item">
+                            <input class="form-control" value="{{siteurl}}"  disabled>
+                            <span class="badge badge-secondary copytoclipboard" 
+                                data-toggle="tooltip" title='Copy'>
+                                <i class="fa fa-clipboard"></i>
+                            </span>
+                            <span> 
+                                {{#siteurl}}
+                                <i class="fa fa-check text-success"></i>
+                                {{/siteurl}}
+                                {{^siteurl}}
+                                <i class="fa fa-close text-danger"></i>
+                                {{/siteurl}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group {{^webtoken}} lac-error {{/webtoken}}">
+                        <label> {{#str}} webservicetoken, local_lmsace_connect {{/str}} </label>
+                        <div class="form-item">
+                            <input class="form-control" value="{{webtoken}}"  disabled>
+                            <span class="badge badge-secondary copytoclipboard" 
+                                data-toggle="tooltip" title='Copy'>
+                                <i class="fa fa-clipboard"></i>
+                            </span>
+                            {{#webtoken}}
+                                <i class="fa fa-check text-success"></i>
+                            {{/webtoken}}
+                            {{^webtoken}}
+                            <span> <i class="fa fa-close text-danger"></i></span>
+                            {{/webtoken}}
+                            {{^webtoken}}
+                            <p> {{#str}} tokeningeneratetoken, local_lmsace_connect {{/str}} </p>
+                            {{/webtoken}}
+                        </div>
+                    </div>
+                    {{#webtoken}}
+                    {{#iscapmissing}}
+                    <div class="form-group lac-error">
+                        <label> {{#str}} missingcapabilities, local_lmsace_connect {{/str}} </label>
+                        <p> {{#str}} missingcapabilitiesmsg, local_lmsace_connect {{/str}} </p>
+                        {{{missingcapability}}}
+                    </div>
+                    {{/iscapmissing}}
+                    {{/webtoken}}
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="connection" role="tabpanel" aria-labelledby="connection-tab">
+            {{{connectionform}}}
+        </div>
+    </div>
+</div>
+{{#js}}
+    require(['jquery'], function($) {
+        $('.copytoclipboard').on('click', function() {
+            var copytext = $(this).prev().val();
+            if (typeof (navigator.clipboard) == 'undefined') {
+                var textArea = document.createElement("textarea");
+                textArea.value = copytext;
+                textArea.style.position = "fixed";  //avoid scrolling to bottom
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    var successful = document.execCommand('copy');
+
+                } catch (err) {
+
+                }
+                document.body.removeChild(textArea)
+                return;
+            } else {
+                navigator.clipboard.writeText(copytext);
+            }
+        });
+    })
+{{/js}}
