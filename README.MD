@@ -8,7 +8,7 @@ This plugin will enable the webservice, enable the rest protocol and create toke
 Also, it will create a new service by adding needed external function.
 
 You can copy the webservice token on
-> Go to 'Site administration' -> 'server' -> 'Web services' -> 'Generate LAConnect Connection', here on 'General' tab you will see the "**Site URl and Site Tokens**" in textbox..
+> Go to 'Site administration' -> 'Plugins' -> 'Local' -> 'LMSACE Connect', here on 'General' tab you will see the "**Site URl and Site Tokens**" in textbox..
 
 ### Version
 
@@ -27,7 +27,7 @@ https://github.com/lmsace/lmsace-connect-moodle
 ### Steps to generate connection data.
 
 1. Login as site administrator.
-2. Go to '*Site administration*' -> '*server*' -> '*Web services*' -> '*Generate LAConnect Connection*'
+2. Go to '*Site administration*' -> '*Plugins*' -> '*Local*' -> '*LMSACE Connect*'
 3. Go to "**General**" tab, Enable the webservice by clicking the "*Enable*" button.
 4. Enable the reset webprotocal by clicking the "*Enable*" button.
 5. On here, go to '**Generate Token**' tab. Select any of the user you want to assign webservices.
