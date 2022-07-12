@@ -29,7 +29,7 @@ https://github.com/lmsace/lmsace-connect-moodle
 1. Login as site administrator.
 2. Go to '*Site administration*' -> '*Plugins*' -> '*Local Plugins*' -> '*LMSACE Connect*'
 3. Go to "**General**" tab, Enable the webservice by clicking the "*Enable*" button.
-4. Enable the reset webprotocal by clicking the "*Enable*" button.
+4. Enable the reset webprotocol by clicking the "*Enable*" button.
 5. On here, go to '**Generate Token**' tab. Select any of the user you want to assign webservices.
 > Note: Selected user must have assign role capability and other capabilities. When the token user doesn't have the needed capabilities, that missing capabilities are listed here. Please assign all the listed capabilities to that selected user.
 6. Finally, you can copy the "*Site URL*" and "*Webservice Token*" to WordPress side LMSACE connect plugin.
