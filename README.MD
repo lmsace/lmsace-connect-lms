@@ -27,14 +27,15 @@ https://github.com/lmsace/lmsace-connect-moodle
 
 ### Installation steps using ZIP file.
 
-1. Download LMSACE Connect plugin file from GIT repository [lmsace-connect-moodle.zip](https://github.com/lmsace/lmsace-connect-moodle).
-2. Rename the folder name into '**lmsace_connect**'. And zip the folder.
-3. Next login as Site administrator
-4. Go to '*Site Administration*' -> '*Plugins*' -> '*Upload Plugin*', On here upload the plugin zip '**lmsace_connect.zip**'.
-4. Go to ‘Site administration’ -> ‘Notifications’ , here on ‘Plugins check’ page you will see the lmsace_connect Local plugin in listing.
-5. Click the “Upgrade Moodle database now” button displayed on bottom of the page
+1. Clone LMSACE Connect Git repository in any of your prefered location.
+2. Remove the **.git** folder.
+3. Rename the folder name into '**lmsace_connect**'. And zip the folder.
+4. Next login as Site administrator
+5. Go to '*Site Administration*' -> '*Plugins*' -> '*Upload Plugin*', On here upload the plugin zip '**lmsace_connect.zip**'.
+6. Go to ‘Site administration’ -> ‘Notifications’ , here on ‘Plugins check’ page you will see the lmsace_connect Local plugin in listing.
+7. Click the “Upgrade Moodle database now” button displayed on bottom of the page
 > You will get success message once the plugin installed successfully.
-6. By clicking “Continue” button on success page. you will redirect to the admin notification page.
+8. By clicking “Continue” button on success page. you will redirect to the admin notification page.
 
 
 ### Installation steps using Git.
