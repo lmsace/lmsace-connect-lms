@@ -45,12 +45,12 @@ class connection_form extends moodleform {
         array_walk($userlist, function($user) {
             return fullname($user);
         });
-        $users = $DB->get_records('user', ['confirmed' => 1, 'deleted' => 0]);
-        foreach ($users as $user) {
-            if ($user->id != 1) {
-                $userlist[$user->id] = fullname($user);
-            }
-        }
+//         $users = $DB->get_records('user', ['confirmed' => 1, 'deleted' => 0]);
+//         foreach ($users as $user) {
+//             if ($user->id != 1) {
+//                 $userlist[$user->id] = fullname($user);
+//             }
+//         }
         $mform->addElement('autocomplete', 'technicaluser', get_string('selectuser', 'local_lmsace_connect'), $userlist);
         $mform->setType('technicaluser', PARAM_INT);
         $mform->setDefault('technicaluser', $this->_customdata['technicaluser']);
