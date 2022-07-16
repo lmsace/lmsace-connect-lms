@@ -42,16 +42,13 @@ class connection_form extends moodleform {
         $mform = $this->_form;
         // Techinical user selector dropdown.
         $userlist = get_admins();
-        array_walk($userlist, function($user) {
-            return fullname($user);
-        });
-//         $users = $DB->get_records('user', ['confirmed' => 1, 'deleted' => 0]);
-//         foreach ($users as $user) {
-//             if ($user->id != 1) {
-//                 $userlist[$user->id] = fullname($user);
-//             }
-//         }
-        $mform->addElement('autocomplete', 'technicaluser', get_string('selectuser', 'local_lmsace_connect'), $userlist);
+        $usersinfo = [];
+        if (!empty($userlist)) {
+            foreach ($userlist as $user) {
+                $usersinfo[$user->id] = fullname($user);
+            }
+        }
+        $mform->addElement('autocomplete', 'technicaluser', get_string('selectuser', 'local_lmsace_connect'), $usersinfo);
         $mform->setType('technicaluser', PARAM_INT);
         $mform->setDefault('technicaluser', $this->_customdata['technicaluser']);
         $mform->addElement('static', '', '', get_string('assignuserdescription', 'local_lmsace_connect') );
