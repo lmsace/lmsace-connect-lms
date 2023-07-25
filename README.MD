@@ -58,8 +58,8 @@ https://github.com/lmsace/lmsace-connect-moodle
 ### Changes log
 
 1. **Version 2.0**
-    1. Improved course imports.
-    2. Implemented SSO between wordpress and moodle
-    3. Included course data with course imports.
-    4. Bug fixes in user creation.
+    * Improved course imports.
+    * Implemented SSO between wordpress and moodle
+    * Included course data with course imports.
+    * Bug fixes in user creation.
 
