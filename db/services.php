@@ -15,11 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Custom functions and services plugin will use.
+ * Local lmsace connect - Custom functions and services plugin will use.
  *
- * @package local_lmsace_connect
- * @copyright LMSACE DEV TEAM
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_lmsace_connect
+ * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -40,6 +40,7 @@ $functions = array(
         'description' => 'Get courses with limit',
         'type'        => 'write',
     ),
+
     'local_lmsace_connect_get_courses_count' => array(
         'classname'   => 'local_lmsace_connect_external',
         'methodname'  => 'get_courses_count',
@@ -49,21 +50,31 @@ $functions = array(
     ),
 );
 
+$lafunctions = array(
+    'core_course_get_courses',
+    'core_user_create_users',
+    'core_user_get_users_by_field',
+    'enrol_manual_enrol_users',
+    'enrol_manual_unenrol_users',
+    'core_course_get_categories',
+    'core_course_get_courses_by_field',
+    'core_enrol_get_users_courses',
+    'local_lmsace_connect_user_roles',
+    'local_lmsace_connect_limit_courses',
+    'local_lmsace_connect_get_courses_count',
+);
+
+// Include the external services from auth lmsace_connect if available.
+if (class_exists('auth_lmsace_connect\external')) {
+    require_once($CFG->dirroot."\auth\lmsace_connect\db\services.php");
+    if (isset($functions)) {
+        array_push($lafunctions, array_keys($functions));
+    }
+}
+
 $services = array(
     'LMSACE Connect Service'  => array(
-        'functions' => array(
-            'core_course_get_courses',
-            'core_user_create_users',
-            'core_user_get_users_by_field',
-            'enrol_manual_enrol_users',
-            'enrol_manual_unenrol_users',
-            'core_course_get_categories',
-            'core_course_get_courses_by_field',
-            'core_enrol_get_users_courses',
-            'local_lmsace_connect_user_roles',
-            'local_lmsace_connect_limit_courses',
-            'local_lmsace_connect_get_courses_count',
-        ),
+        'functions' => $lafunctions,
         'enabled' => 1,
         'restrictedusers' => 0,
         'shortname' => 'local_lmsace_connect',

@@ -17,9 +17,9 @@
 /**
  * Create webservice automatically. General functions.
  *
- * @package local_lmsace_connect
- * @copyright LMSACE DEV TEAM
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_lmsace_connect
+ * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**

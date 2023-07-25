@@ -15,20 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Admin settings.
+ * LMSACE Connect course data - Course data export version files.
  *
- * @package   local_lmsace_connect
+ * @package   lacpro_coursedata
  * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
-
-// Settings to generate token.
-$ADMIN->add('localplugins',
-    new admin_externalpage(
-        'local_lmsace_connect_generatetoken',
-        get_string('generate_token', 'local_lmsace_connect'),
-        "$CFG->wwwroot/local/lmsace_connect/generatetoken.php"
-    )
-);
+$plugin->version = 2023072500;
+$plugin->component = 'lacpro_coursedata';
+$plugin->release = 'v1.0'; // Human readable release.
+$plugin->maturity = MATURITY_STABLE;

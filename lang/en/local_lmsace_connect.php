@@ -15,11 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Language strings.
+ * Local lmsace connect - Language strings.
  *
- * @package local_lmsace_connect
- * @copyright LMSACE DEV TEAM
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_lmsace_connect
+ * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -46,6 +46,6 @@ $string['configenablewebservices'] = 'Enable webservice';
 $string['configenablewebservices_help'] = 'Web services enable other systems, such as the Moodle app, to log in to the site and perform operations. For extra security, the setting should be disabled if you are not using the app, or an external tool/service that requires integration via web services.';
 $string['tokeningeneratetoken'] = 'Create a token for the web services user in "<b>Generate Token</b>" tab.';
 
-$string['settingstoconnect'] = 'Enable the below configs and generate the token to connect with WordPress Shop';
+$string['settingstoconnect'] = 'Enable the below configs and generate the token.';
 $string['assignrolemissing'] = "<span class='badge badge-danger'> User doesn't not have any assignable roles.</span>
 <p>User should have role to assign the users to the course who purchase the course on woocommerce</p>";

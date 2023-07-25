@@ -15,11 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Assign user and generate token.
+ * Local lmsace connect - Assign user and generate token.
  *
  * @package local_lmsace_connect
- * @copyright LMSACE DEV TEAM
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once('../../config.php');

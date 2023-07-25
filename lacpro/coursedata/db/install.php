@@ -15,20 +15,31 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Admin settings.
+ * LMSACE Connect coursedata - Add the external functions to lmsace connect service.
  *
- * @package   local_lmsace_connect
+ * @package   lacpro_coursedata
  * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+ /**
+  * Added the external service methods to lmsace connect webservice, if already generated.
+  *
+  * @return bool
+  */
+function xmldb_lacpro_coursedata_install() {
 
-// Settings to generate token.
-$ADMIN->add('localplugins',
-    new admin_externalpage(
-        'local_lmsace_connect_generatetoken',
-        get_string('generate_token', 'local_lmsace_connect'),
-        "$CFG->wwwroot/local/lmsace_connect/generatetoken.php"
-    )
-);
+    global $DB;
+
+    if ($serviceid = $DB->get_field('external_services', 'id', ['shortname' => 'local_lmsace_connect'])) {
+        $data = array(
+            'externalserviceid' => $serviceid,
+            'functionname' => 'lacpro_coursedata_get_courses_detail_by_field'
+        );
+        if (!$DB->record_exists('external_services_functions', $data)) {
+            $DB->insert_record('external_services_functions', $data);
+        }
+    }
+
+    return true;
+}

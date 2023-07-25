@@ -15,11 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Generate token form and moodle webservice enable options.
+ * LMSACE Connect - Generate token form and moodle webservice enable options.
  *
- * @package local_lmsace_connect
- * @copyright LMSACE DEV TEAM
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_lmsace_connect
+ * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die('No dirct access');
@@ -42,13 +42,16 @@ class connection_form extends moodleform {
         $mform = $this->_form;
         // Techinical user selector dropdown.
         $userlist = get_admins();
-        $usersinfo = [];
-        if (!empty($userlist)) {
-            foreach ($userlist as $user) {
-                $usersinfo[$user->id] = fullname($user);
+        array_walk($userlist, function($user) {
+            return fullname($user);
+        });
+        $users = $DB->get_records('user', ['confirmed' => 1, 'deleted' => 0]);
+        foreach ($users as $user) {
+            if ($user->id != 1) {
+                $userlist[$user->id] = fullname($user);
             }
         }
-        $mform->addElement('autocomplete', 'technicaluser', get_string('selectuser', 'local_lmsace_connect'), $usersinfo);
+        $mform->addElement('autocomplete', 'technicaluser', get_string('selectuser', 'local_lmsace_connect'), $userlist);
         $mform->setType('technicaluser', PARAM_INT);
         $mform->setDefault('technicaluser', $this->_customdata['technicaluser']);
         $mform->addElement('static', '', '', get_string('assignuserdescription', 'local_lmsace_connect') );
