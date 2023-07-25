@@ -24,6 +24,12 @@ Public Git Repository
 
 https://github.com/lmsace/lmsace-connect-moodle
 
+
+## Documenation
+
+The official documentation to setup connections and SSO between Moodle and Woocommerce using LMSACE Connect can be found at https://github.com/lmsace/lmsace-connect-woocommerce/wiki
+
+
 ### Steps to generate connection data.
 
 1. Login as site administrator.
@@ -54,6 +60,16 @@ https://github.com/lmsace/lmsace-connect-moodle
 4. Click the “Upgrade Moodle database now” button displayed on bottom of the page.
 > You will get success message once the plugin installed successfully.
 5. By clicking “Continue” button on success page. You will redirect to the admin notification page.
+
+
+## Support
+
+If you need any assistance with the LMSACE Connect SSO plugin, please contact LMSACE support at info@lmsace.com.
+
+### Review
+
+You feel LMSACE Connect helps you to sell courses easier. **Give a review and rating on wordpress.org**, it means lot for us. We are looking for your comments.
+
 
 ### Changes log
 
