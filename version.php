@@ -15,18 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * LMSACE Connect version files.
+ * LMSACE Connect - Component version files.
  *
- * @package local_lmsace_connect
- * @copyright LMSACE DEV TEAM
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_lmsace_connect
+ * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-
 $plugin->component = 'local_lmsace_connect';// Name of this plugin.
-$plugin->version = 2022032800; // Release on.
-$plugin->release = 'v1.0'; // Human readable release.
+$plugin->version = 2023072500; // Release on.
+$plugin->release = 'v2.0'; // Human readable release.
 $plugin->maturity = MATURITY_STABLE;
 $plugin->requires = 2019052000; // Requires Moodle 3.7.
