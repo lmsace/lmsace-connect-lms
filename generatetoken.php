@@ -17,7 +17,7 @@
 /**
  * Local lmsace connect - Assign user and generate token.
  *
- * @package local_lmsace_connect
+ * @package   local_lmsace_connect
  * @copyright 2023 LMSACE Dev Team <https://www.lmsace.com>.
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

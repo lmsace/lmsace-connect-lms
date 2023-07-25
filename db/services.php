@@ -66,10 +66,8 @@ $lafunctions = array(
 
 // Include the external services from auth lmsace_connect if available.
 if (class_exists('auth_lmsace_connect\external')) {
-    require_once($CFG->dirroot."\auth\lmsace_connect\db\services.php");
-    if (isset($functions)) {
-        array_push($lafunctions, array_keys($functions));
-    }
+    $lafunctions[] = 'auth_lmsace_connect_generate_userloginkey';
+    $lafunctions[] = 'auth_lmsace_connect_is_userloggedin';
 }
 
 $services = array(

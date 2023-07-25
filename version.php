@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->component = 'local_lmsace_connect';// Name of this plugin.
-$plugin->version = 2023072500; // Release on.
+$plugin->version = 2023072504; // Release on.
 $plugin->release = 'v2.0'; // Human readable release.
 $plugin->maturity = MATURITY_STABLE;
 $plugin->requires = 2019052000; // Requires Moodle 3.7.
