@@ -98,14 +98,14 @@ $webservice = 'rest';
 $protocol = (in_array($webservice, $activewebservices)) ? true : false;
 $protocolurl = new moodle_url('/local/lmsace_connect/generatetoken.php', ['action' => 'protocol']);
 $protocoltext = ($protocol == true) ? get_string('disable', 'core')  : get_string('enable', 'core');
-$protocolbutton = $OUTPUT->render(new single_button($protocolurl, $protocoltext, 'post', true));
+$protocolbutton = $OUTPUT->render(new single_button($protocolurl, $protocoltext, 'post', 'primary'));
 
 $webservice = get_config('core', 'enablewebservices');
 $webserviceurl = new moodle_url('/local/lmsace_connect/generatetoken.php', ['action' => 'webservice']);
 if ($webservice) {
-    $webservicebutton = $OUTPUT->render(new single_button($webserviceurl, get_string('disable', 'core'), 'post', true));
+    $webservicebutton = $OUTPUT->render(new single_button($webserviceurl, get_string('disable', 'core'), 'post', 'primary'));
 } else {
-    $webservicebutton = $OUTPUT->render(new single_button($webserviceurl, get_string('enable', 'core'), 'post', true));
+    $webservicebutton = $OUTPUT->render(new single_button($webserviceurl, get_string('enable', 'core'), 'post', 'primary'));
 }
 $webservicehelp = $OUTPUT->help_icon('configenablewebservices', 'local_lmsace_connect');
 $connectionform = new connection_form(null, $newdata);
@@ -130,7 +130,8 @@ $data = [
     'missingcapability' => $missingcapability,
     'webtoken' => ($newdata['token']) ?: '',
     'siteurl' => $CFG->wwwroot,
-    'tabstatus' => $tabstatus
+    'tabstatus' => $tabstatus,
+    'backwardsupport' => (version_compare($CFG->version, 2025041400, '>=')) ? true : false
 ];
 
 echo $OUTPUT->render_from_template('local_lmsace_connect/generate_token', $data);

@@ -111,7 +111,7 @@
     background: var(--primary);
     display: inline-block;
     vertical-align: top;
-    margin-left: -5px;
+    margin-left: -15px;
     cursor: pointer;
 }
 

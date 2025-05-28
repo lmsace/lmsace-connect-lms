@@ -74,10 +74,16 @@ class external extends external_api {
                 foreach ($modinfo->sections[$thissection->section] as $modnumber) {
                     $mod = $modinfo->cms[$modnumber];
                     $modname = $mod->get_formatted_name() ?: $mod->name;
-                    $modicon = $CFG->wwwroot.'/mod/'.$mod->modname.'/pix/monologo.png';
-                    if (!file_exists($CFG->dirroot.'/mod/'.$mod->modname.'/pix/monologo.png')) {
+
+                    $monoiconpath = '/mod/' . $mod->modname . '/pix/monologo';
+                    $modiconpath = file_exists($CFG->dirroot. $monoiconpath .'.png') ? $monoiconpath . '.png' : $monoiconpath . '.svg';
+
+                    if (file_exists($CFG->dirroot . $modiconpath)) {
+                        $modicon = $CFG->wwwroot . $modiconpath;
+                    } else {
                         $modicon = $CFG->wwwroot.'/mod/'.$mod->modname.'/pix/icon.png';
                     }
+
                     $cmlist[] = ['name' => $modname, 'modicon' => $modicon, 'modname' => $mod->modname];
                 }
                 $sections[] = ['name' => $sectionname, 'cmlist' => $cmlist];

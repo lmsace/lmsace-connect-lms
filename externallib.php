@@ -349,4 +349,5 @@ class local_lmsace_connect_external extends external_api {
             [ 'count' => new external_value(PARAM_INT, 'Count of course records')]
         );
     }
+
 }

@@ -46,7 +46,15 @@ $functions = array(
         'methodname'  => 'get_courses_count',
         'classpath'   => 'local/lmsace_connect/externallib.php',
         'description' => 'Get count of course records',
-        'type'        => 'write',
+        'type'        => 'read', // Changed from write to read as it only fetches data
+    ),
+
+    'local_lmsace_connect_get_stats' => array(
+        'classname'   => 'local_lmsace_connect_external',
+        'methodname'  => 'get_stats',
+        'classpath'   => 'local/lmsace_connect/externallib.php',
+        'description' => 'Get various Moodle statistics like total courses, users, enrolments, and completions.',
+        'type'        => 'read',
     ),
 );
 
@@ -62,6 +70,7 @@ $lafunctions = array(
     'local_lmsace_connect_user_roles',
     'local_lmsace_connect_limit_courses',
     'local_lmsace_connect_get_courses_count',
+    'core_webservice_get_site_info',
 );
 
 // Include the external services from auth lmsace_connect if available.

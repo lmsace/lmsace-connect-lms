@@ -49,3 +49,6 @@ $string['tokeningeneratetoken'] = 'Create a token for the web services user in "
 $string['settingstoconnect'] = 'Enable the below configs and generate the token.';
 $string['assignrolemissing'] = "<span class='badge badge-danger'> User doesn't not have any assignable roles.</span>
 <p>User should have role to assign the users to the course who purchase the course on woocommerce</p>";
+
+$string['subplugintype_lacpro_plural'] = 'LMSACE Connect Pro add-ons';
+$string['copiedtoclipboard'] = 'Copied to clipboard';
